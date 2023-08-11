@@ -1,4 +1,7 @@
-#neetCode
+#vsCode
+import sys
+from typing import List
+
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         l, r = 0, len(s) - 1
@@ -19,4 +22,23 @@ class Solution:
             ord("A") <= ord(c) <= ord("Z")
             or ord("a") <= ord(c) <= ord("z")
             or ord("0") <= ord(c) <= ord("9")
+            or c in {" ", "-"}
         )
+
+def main():
+    s = input("Enter a string: ")
+
+    if s == "":
+        print("Error: Please enter a non-empty string.")
+        return
+
+    solution = Solution()
+    result = solution.isPalindrome(s)
+
+    if result:
+        print("The string is a palindrome.")
+    else:
+        print("The string is not a palindrome.")
+
+if __name__ == "__main__":
+    main()
