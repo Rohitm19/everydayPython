@@ -1,12 +1,11 @@
-#neetCode
+#vsCode
 
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums):
         res = []
         nums.sort()
 
         for i, a in enumerate(nums):
-            # Skip positive integers
             if a > 0:
                 break
 
@@ -26,5 +25,14 @@ class Solution:
                     r -= 1
                     while nums[l] == nums[l - 1] and l < r:
                         l += 1
-                        
+
         return res
+
+# Manual input
+input_nums = input("Enter space-separated integers: ").split()
+nums = [int(num) for num in input_nums]
+
+# Create an instance of the Solution class and call the threeSum method
+solution = Solution()
+result = solution.threeSum(nums)
+print(result)
