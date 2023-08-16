@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
@@ -15,3 +15,13 @@ class Solution:
                 l += 1
 
         return (r - l + 1)
+
+def main():
+    input_string = input("Enter a string: ")
+    k = int(input("Enter the value of k: "))
+    solution = Solution()
+    result = solution.characterReplacement(input_string, k)
+    print("Length of longest substring after character replacement:", result)
+
+if __name__ == "__main__":
+    main()
