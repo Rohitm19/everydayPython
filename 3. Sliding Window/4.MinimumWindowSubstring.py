@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
@@ -31,3 +31,13 @@ class Solution:
                 l += 1
         l, r = res
         return s[l : r + 1] if resLen != float("infinity") else ""
+
+def main():
+    input_s = input("Enter string s: ")
+    input_t = input("Enter string t: ")
+    solution = Solution()
+    result = solution.minWindow(input_s, input_t)
+    print("Minimum window substring:", result)
+
+if __name__ == "__main__":
+    main()
