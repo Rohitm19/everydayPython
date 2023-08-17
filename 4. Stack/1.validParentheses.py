@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def isValid(self, s: str) -> bool:
@@ -14,3 +14,16 @@ class Solution:
             stack.pop()
 
         return not stack
+
+def main():
+    input_string = input("Enter a string containing parentheses, brackets, and braces: ")
+    solution = Solution()
+    is_valid = solution.isValid(input_string)
+    
+    if is_valid:
+        print("The input string contains valid parentheses, brackets, and braces.")
+    else:
+        print("The input string does not contain valid parentheses, brackets, and braces.")
+
+if __name__ == "__main__":
+    main()
