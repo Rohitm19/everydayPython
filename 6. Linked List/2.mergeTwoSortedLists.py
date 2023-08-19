@@ -1,10 +1,10 @@
-#neetcode
+#vsCode
 
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 class Solution:
     def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
         dummy = ListNode()
@@ -25,3 +25,42 @@ class Solution:
             tail.next = list2
 
         return dummy.next
+
+def create_linked_list(nums):
+    dummy = ListNode()
+    current = dummy
+    for num in nums:
+        current.next = ListNode(num)
+        current = current.next
+    return dummy.next
+
+def print_linked_list(head):
+    current = head
+    while current:
+        print(current.val, end=" -> ")
+        current = current.next
+    print("None")
+
+def main():
+    nums1 = input("Enter a list of numbers for the first linked list separated by spaces: ").split()
+    nums1 = [int(num) for num in nums1]
+    list1 = create_linked_list(nums1)
+
+    nums2 = input("Enter a list of numbers for the second linked list separated by spaces: ").split()
+    nums2 = [int(num) for num in nums2]
+    list2 = create_linked_list(nums2)
+
+    solution = Solution()
+    merged_head = solution.mergeTwoLists(list1, list2)
+
+    print("First Linked List:")
+    print_linked_list(list1)
+
+    print("Second Linked List:")
+    print_linked_list(list2)
+
+    print("Merged Linked List:")
+    print_linked_list(merged_head)
+
+if __name__ == "__main__":
+    main()
