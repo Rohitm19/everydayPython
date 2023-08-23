@@ -1,10 +1,10 @@
-#neetcode
+#vsCode
 
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         if not lists or len(lists) == 0:
@@ -36,3 +36,32 @@ class Solution:
         if l2:
             tail.next = l2
         return dummy.next
+
+def create_linked_list(nums):
+    dummy = ListNode()
+    current = dummy
+    for num in nums:
+        current.next = ListNode(num)
+        current = current.next
+    return dummy.next
+
+def main():
+    k = int(input("Enter the number of linked lists: "))
+    lists = []
+    for i in range(k):
+        nums = input(f"Enter a list of numbers for list {i + 1} separated by spaces: ").split()
+        nums = [int(num) for num in nums]
+        lists.append(create_linked_list(nums))
+    
+    solution = Solution()
+    merged_head = solution.mergeKLists(lists)
+
+    print("Merged Linked List:")
+    current = merged_head
+    while current:
+        print(current.val, end=" -> ")
+        current = current.next
+    print("None")
+
+if __name__ == "__main__":
+    main()
