@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class TrieNode:
     def __init__(self):
@@ -26,7 +26,7 @@ class TrieNode:
 
 
 class Solution:
-    def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
+    def findWords(self, board, words):
         root = TrieNode()
         for w in words:
             root.addWord(w)
@@ -63,3 +63,24 @@ class Solution:
                 dfs(r, c, root, "")
 
         return list(res)
+
+def main():
+    ROWS = int(input("Enter the number of rows for the board: "))
+    COLS = int(input("Enter the number of columns for the board: "))
+    
+    board = []
+    for i in range(ROWS):
+        row = input(f"Enter row {i + 1} as a string of characters: ").split()
+        board.append(row)
+    
+    words = input("Enter a list of words separated by spaces: ").split()
+    
+    solution = Solution()
+    found_words = solution.findWords(board, words)
+    
+    print("Found words on the board:")
+    for word in found_words:
+        print(word)
+
+if __name__ == "__main__":
+    main()
