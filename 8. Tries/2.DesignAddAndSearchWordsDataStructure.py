@@ -1,4 +1,4 @@
-#neetcode
+#vsCode
 
 class TrieNode:
     def __init__(self):
@@ -36,3 +36,32 @@ class WordDictionary:
             return cur.word
 
         return dfs(0, self.root)
+
+def main():
+    word_dict = WordDictionary()
+    
+    while True:
+        print("Choose an operation:")
+        print("1. Add a word")
+        print("2. Search for a word (including '.')")
+        print("3. Exit")
+        
+        choice = int(input("Enter your choice: "))
+        
+        if choice == 1:
+            word = input("Enter the word to add: ")
+            word_dict.addWord(word)
+            print(f"'{word}' has been added to the Word Dictionary.")
+        elif choice == 2:
+            word = input("Enter the word to search for (you can use '.' as a wildcard): ")
+            if word_dict.search(word):
+                print(f"'{word}' is in the Word Dictionary.")
+            else:
+                print(f"'{word}' is not in the Word Dictionary.")
+        elif choice == 3:
+            break
+        else:
+            print("Invalid choice. Please choose a valid operation.")
+
+if __name__ == "__main__":
+    main()
