@@ -1,11 +1,15 @@
+#vsCode
+
+import heapq
+
 class MedianFinder:
     def __init__(self):
         """
-        initialize your data structure here.
+        Initialize your data structure here.
         """
-        # two heaps, large, small, minheap, maxheap
-        # heaps should be equal size
-        self.small, self.large = [], []  # maxHeap, minHeap (python default)
+        # Two heaps, large, small, minheap, maxheap
+        # Heaps should be equal size
+        self.small, self.large = [], []  # MaxHeap, MinHeap (Python default)
 
     def addNum(self, num: int) -> None:
         if self.large and num > self.large[0]:
@@ -26,3 +30,29 @@ class MedianFinder:
         elif len(self.large) > len(self.small):
             return self.large[0]
         return (-1 * self.small[0] + self.large[0]) / 2.0
+
+def main():
+    median_finder = MedianFinder()
+
+    while True:
+        print("Choose an operation:")
+        print("1. Add a number")
+        print("2. Find the median")
+        print("3. Exit")
+
+        choice = int(input("Enter your choice: "))
+
+        if choice == 1:
+            num = int(input("Enter the number to add: "))
+            median_finder.addNum(num)
+            print(f"{num} has been added.")
+        elif choice == 2:
+            median = median_finder.findMedian()
+            print(f"The median is: {median}")
+        elif choice == 3:
+            break
+        else:
+            print("Invalid choice. Please choose a valid operation.")
+
+if __name__ == "__main__":
+    main()
