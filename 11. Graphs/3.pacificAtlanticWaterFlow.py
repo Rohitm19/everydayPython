@@ -35,3 +35,4 @@ class Solution:
                 if (r, c) in pac and (r, c) in atl:
                     res.append([r, c])
         return res
+    
