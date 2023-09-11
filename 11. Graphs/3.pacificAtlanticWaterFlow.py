@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
@@ -21,6 +23,12 @@ class Solution:
             dfs(r, c + 1, visit, heights[r][c])
             dfs(r, c - 1, visit, heights[r][c])
 
+        # Manually input the heights matrix
+        heights = []
+        for r in range(ROWS):
+            row = list(map(int, input(f"Enter heights for row {r + 1} (space-separated): ").split()))
+            heights.append(row)
+
         for c in range(COLS):
             dfs(0, c, pac, heights[0][c])
             dfs(ROWS - 1, c, atl, heights[ROWS - 1][c])
@@ -35,4 +43,13 @@ class Solution:
                 if (r, c) in pac and (r, c) in atl:
                     res.append([r, c])
         return res
-    
+
+def main():
+    solution = Solution()
+    result = solution.pacificAtlantic([])
+    print("Coordinates where water can flow into both the Pacific and Atlantic oceans:")
+    for coord in result:
+        print(coord)
+
+if __name__ == "__main__":
+    main()
