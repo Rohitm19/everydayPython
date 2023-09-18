@@ -1,20 +1,12 @@
-#neetCode
-
-# Problem is free on Lintcode
 class Solution:
-    """
-    @param n: An integer
-    @param edges: a list of undirected edges
-    @return: true if it's a valid tree, or false
-    """
-
     def validTree(self, n, edges):
         if not n:
             return True
         adj = {i: [] for i in range(n)}
-        for n1, n2 in edges:
-            adj[n1].append(n2)
-            adj[n2].append(n1)
+        for i in range(len(edges)):
+            a, b = map(int, input(f"Enter edge {i + 1} (node a, node b): ").split())
+            adj[a].append(b)
+            adj[b].append(a)
 
         visit = set()
 
@@ -31,17 +23,9 @@ class Solution:
             return True
 
         return dfs(0, -1) and n == len(visit)
-    
-    
-    
-    # alternative solution via DSU O(ElogV) time complexity and 
-    # save some space as we don't recreate graph\tree into adjacency list prior dfs and loop over the edge list directly
-    class Solution:
-    """
-    @param n: An integer
-    @param edges: a list of undirected edges
-    @return: true if it's a valid tree, or false
-    """
+
+
+class SolutionAlternative:
     def __find(self, n: int) -> int:
         while n != self.parents.get(n, n):
             n = self.parents.get(n, n)
@@ -65,7 +49,8 @@ class Solution:
         self.heights = {}
         self.components = n
 
-        for e1, e2 in edges:
+        for i in range(len(edges)):
+            e1, e2 = map(int, input(f"Enter edge {i + 1} (node 1, node 2): ").split())
             if self.__find(e1) == self.__find(e2):  # 'redundant' edge
                 return False
             self.__connect(e1, e2)
@@ -73,3 +58,32 @@ class Solution:
         return self.components == 1  # forest contains one tree
 
 
+def main():
+    solution = Solution()
+    n = int(input("Enter the number of nodes: "))
+    num_edges = int(input("Enter the number of edges: "))
+    edges = []
+    for i in range(num_edges):
+        a, b = map(int, input(f"Enter edge {i + 1} (node a, node b): ").split())
+        edges.append([a, b])
+
+    result = solution.validTree(n, edges)
+    print("Is it a valid tree?", result)
+
+
+def main_alternative():
+    solution = SolutionAlternative()
+    n = int(input("Enter the number of nodes: "))
+    num_edges = int(input("Enter the number of edges: "))
+    edges = []
+    for i in range(num_edges):
+        a, b = map(int, input(f"Enter edge {i + 1} (node a, node b): ").split())
+        edges.append([a, b])
+
+    result = solution.valid_tree(n, edges)
+    print("Is it a valid tree?", result)
+
+
+if __name__ == "__main__":
+    main()
+    main_alternative()
