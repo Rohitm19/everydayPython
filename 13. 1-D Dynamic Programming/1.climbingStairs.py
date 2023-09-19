@@ -1,4 +1,4 @@
-#neetcode
+#vsCode
 
 class Solution:
     def climbStairs(self, n: int) -> int:
@@ -11,3 +11,13 @@ class Solution:
             n1 = n2
             n2 = temp
         return n2
+
+def main():
+    solution = Solution()
+    n = int(input("Enter the value of n: "))
+    result = solution.climbStairs(n)
+    print("Number of distinct ways to climb stairs:", result)
+
+
+if __name__ == "__main__":
+    main()
