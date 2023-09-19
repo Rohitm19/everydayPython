@@ -1,4 +1,6 @@
-#neetcode
+#vsCode
+
+from typing import List
 
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
@@ -11,7 +13,6 @@ class Solution:
                 return ""
             for j in range(minLen):
                 if w1[j] != w2[j]:
-                    print(w1[j], w2[j])
                     adj[w1[j]].add(w2[j])
                     break
 
@@ -37,3 +38,13 @@ class Solution:
 
         res.reverse()
         return "".join(res)
+
+def main():
+    solution = Solution()
+    words = input("Enter the words (comma-separated): ").split(',')
+    result = solution.alienOrder(words)
+    print("Alien order:", result)
+
+
+if __name__ == "__main__":
+    main()
