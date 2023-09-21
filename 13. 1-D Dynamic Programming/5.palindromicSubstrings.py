@@ -1,4 +1,4 @@
-#neetcode
+#vsCode
 
 class Solution:
     def countSubstrings(self, s: str) -> int:
@@ -16,3 +16,12 @@ class Solution:
             l -= 1
             r += 1
         return res
+
+def main():
+    solution = Solution()
+    s = input("Enter a string: ")
+    result = solution.countSubstrings(s)
+    print("Number of palindromic substrings:", result)
+
+if __name__ == "__main__":
+    main()
