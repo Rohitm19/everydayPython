@@ -1,4 +1,4 @@
-#neetcode
+#vsCode
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
@@ -25,3 +25,12 @@ class Solution:
                 r += 1
 
         return res
+
+def main():
+    solution = Solution()
+    s = input("Enter a string: ")
+    result = solution.longestPalindrome(s)
+    print("Longest palindrome:", result)
+
+if __name__ == "__main__":
+    main()
