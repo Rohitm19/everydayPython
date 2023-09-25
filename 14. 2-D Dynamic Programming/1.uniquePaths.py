@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
@@ -11,4 +11,15 @@ class Solution:
             row = newRow
         return row[0]
 
-        # O(n * m) O(n)
+# Accept manual input for m and n
+m = int(input("Enter the number of rows (m): "))
+n = int(input("Enter the number of columns (n): "))
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Calculate the unique paths
+result = solution.uniquePaths(m, n)
+
+# Display the result
+print("Unique paths:", result)
