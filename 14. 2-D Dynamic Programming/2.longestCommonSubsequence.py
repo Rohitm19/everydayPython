@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
@@ -12,3 +12,13 @@ class Solution:
                     dp[i][j] = max(dp[i][j + 1], dp[i + 1][j])
 
         return dp[0][0]
+
+def main():
+    solution = Solution()
+    text1 = input("Enter the first text: ")
+    text2 = input("Enter the second text: ")
+    result = solution.longestCommonSubsequence(text1, text2)
+    print("Length of Longest Common Subsequence:", result)
+
+if __name__ == "__main__":
+    main()
