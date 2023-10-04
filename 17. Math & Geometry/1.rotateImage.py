@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
@@ -26,3 +28,20 @@ class Solution:
                 matrix[top + i][r] = topLeft
             r -= 1
             l += 1
+
+def main():
+    solution = Solution()
+    n = int(input("Enter the dimension of the matrix: "))
+    matrix = []
+    print("Enter the elements of the matrix:")
+    for i in range(n):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+
+    solution.rotate(matrix)
+    print("Matrix after rotation:")
+    for row in matrix:
+        print(' '.join(map(str, row)))
+
+if __name__ == "__main__":
+    main()
