@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def reverseBits(self, n: int) -> int:
@@ -7,3 +7,12 @@ class Solution:
             bit = (n >> i) & 1
             res += (bit << (31 - i))
         return res
+
+def main():
+    solution = Solution()
+    n = int(input("Enter the value of n: "))
+    result = solution.reverseBits(n)
+    print("Reversed bits of", n, "is", result)
+
+if __name__ == "__main__":
+    main()
