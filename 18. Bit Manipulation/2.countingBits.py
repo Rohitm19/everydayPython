@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def countBits(self, n: int) -> List[int]:
@@ -10,3 +10,12 @@ class Solution:
                 offset = i
             dp[i] = 1 + dp[i - offset]
         return dp
+
+def main():
+    solution = Solution()
+    n = int(input("Enter the value of n: "))
+    result = solution.countBits(n)
+    print("Bit count for each number up to", n, "is", result)
+
+if __name__ == "__main__":
+    main()
