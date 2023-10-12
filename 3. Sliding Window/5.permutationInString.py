@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
@@ -34,3 +34,10 @@ class Solution:
                 matches -= 1
             l += 1
         return matches == 26
+
+# Manual input
+solution = Solution()
+s1_input = input("Enter the first string: ")
+s2_input = input("Enter the second string: ")
+result = solution.checkInclusion(s1_input, s2_input)
+print("Does s1 appear as a substring in s2?", result)
