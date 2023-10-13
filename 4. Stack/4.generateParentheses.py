@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
@@ -21,3 +21,15 @@ class Solution:
 
         backtrack(0, 0)
         return res
+
+# Manual input and usage
+solution = Solution()
+
+# Manually input n
+n = 3
+
+# Generate parentheses for the given n
+parentheses = solution.generateParenthesis(n)
+
+# Print the generated parentheses
+print("Generated Parentheses for n =", n, ":", parentheses)
