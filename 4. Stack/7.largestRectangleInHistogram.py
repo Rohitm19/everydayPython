@@ -1,4 +1,4 @@
-#neetCode
+from typing import List
 
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
@@ -16,3 +16,12 @@ class Solution:
         for i, h in stack:
             maxArea = max(maxArea, h * (len(heights) - i))
         return maxArea
+
+# Manual input of heights
+heights_input = input("Enter the heights separated by spaces: ")
+heights = [int(height) for height in heights_input.split()]
+
+# Calculate the largest rectangle area
+solution = Solution()
+largest_area = solution.largestRectangleArea(heights)
+print("Largest Rectangle Area:", largest_area)
