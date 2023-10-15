@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
@@ -27,3 +29,19 @@ class Solution:
             else:
                 return True
         return False
+
+# Manual input of the matrix and target value
+matrix = []
+print("Enter the matrix (each row on a new line, elements separated by spaces, leave a blank line to end input):")
+while True:
+    row_input = input().strip()
+    if not row_input:
+        break
+    matrix.append([int(num) for num in row_input.split()])
+
+target = int(input("Enter the target value: "))
+
+# Perform the search
+solution = Solution()
+result = solution.searchMatrix(matrix, target)
+print("Target found:", result)
