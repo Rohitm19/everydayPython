@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
@@ -13,3 +15,13 @@ class Solution:
             else:
                 return m
         return -1
+
+# Manual input of nums and target
+nums_input = input("Enter the numbers in the list separated by spaces: ")
+nums = [int(num) for num in nums_input.split()]
+target = int(input("Enter the target value: "))
+
+# Perform binary search
+solution = Solution()
+result = solution.search(nums, target)
+print("Index of the target in the list:", result)
