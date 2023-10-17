@@ -1,7 +1,6 @@
-#neetCode
+#vsCode
 
-# Time: log(min(n, m))
-
+from typing import List
 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
@@ -33,3 +32,12 @@ class Solution:
                 r = i - 1
             else:
                 l = i + 1
+
+# Manual input of nums1 and nums2
+nums1 = [int(x) for x in input("Enter nums1 (separated by spaces): ").split()]
+nums2 = [int(x) for x in input("Enter nums2 (separated by spaces): ").split()]
+
+# Calculate the median of sorted arrays
+solution = Solution()
+median = solution.findMedianSortedArrays(nums1, nums2)
+print("Median of sorted arrays:", median)
