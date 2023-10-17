@@ -1,4 +1,7 @@
-#neetCode
+#vsCode
+
+from typing import List
+import math
 
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
@@ -17,3 +20,12 @@ class Solution:
             else:
                 l = k + 1
         return res
+
+# Manual input of the piles and h
+piles = [int(x) for x in input("Enter the piles (separated by spaces): ").split()]
+h = int(input("Enter the number of hours available: "))
+
+# Calculate the minimum eating speed
+solution = Solution()
+min_speed = solution.minEatingSpeed(piles, h)
+print("Minimum eating speed:", min_speed)
