@@ -1,5 +1,3 @@
-#neetCode
-
 class TimeMap:
     def __init__(self):
         """
@@ -23,3 +21,16 @@ class TimeMap:
             else:
                 r = m - 1
         return res
+
+# Manual input and usage
+time_map = TimeMap()
+
+# Set values for a specific key
+time_map.set("key1", "value1", 1)
+time_map.set("key1", "value2", 3)
+time_map.set("key1", "value3", 5)
+
+# Get the value for the key at a specific timestamp
+timestamp = int(input("Enter a timestamp: "))
+value = time_map.get("key1", timestamp)
+print("Value at timestamp", timestamp, ":", value)
