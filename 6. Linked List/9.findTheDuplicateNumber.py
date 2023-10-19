@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
@@ -15,3 +17,15 @@ class Solution:
             slow2 = nums[slow2]
             if slow == slow2:
                 return slow
+
+# Manual input and usage
+solution = Solution()
+
+# Manually input the list of numbers
+nums = [1, 3, 4, 2, 2]
+
+# Find the duplicate
+duplicate = solution.findDuplicate(nums)
+
+# Print the duplicate
+print("Duplicate number:", duplicate)
