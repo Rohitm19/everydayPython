@@ -1,16 +1,28 @@
-#neetcode
+#vsCode
+
+import heapq
+from collections import defaultdict
+from typing import List
 
 class Twitter:
     def __init__(self):
+        # Initialize your Twitter data structure here.
         self.count = 0
-        self.tweetMap = defaultdict(list)  # userId -> list of [count, tweetIds]
-        self.followMap = defaultdict(set)  # userId -> set of followeeId
+        self.tweetMap = defaultdict(list)
+        self.followMap = defaultdict(set)
 
     def postTweet(self, userId: int, tweetId: int) -> None:
+        # Manually input userId and tweetId for posting a tweet
+        userId = 1  # Change to your desired userId
+        tweetId = 101  # Change to your desired tweetId
+
         self.tweetMap[userId].append([self.count, tweetId])
         self.count -= 1
 
     def getNewsFeed(self, userId: int) -> List[int]:
+        # Manually input userId to get the news feed
+        userId = 1  # Change to your desired userId
+
         res = []
         minHeap = []
 
@@ -30,8 +42,21 @@ class Twitter:
         return res
 
     def follow(self, followerId: int, followeeId: int) -> None:
+        # Manually input followerId and followeeId to establish a follow relationship
+        followerId = 1  # Change to your desired followerId
+        followeeId = 2  # Change to your desired followeeId
+
         self.followMap[followerId].add(followeeId)
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
+        # Manually input followerId and followeeId to remove a follow relationship
+        followerId = 1  # Change to your desired followerId
+        followeeId = 2  # Change to your desired followeeId
+
         if followeeId in self.followMap[followerId]:
             self.followMap[followerId].remove(followeeId)
+
+# Create an instance of the Twitter class
+twitter = Twitter()
+
+# Perform Twitter actions and print the results as needed
