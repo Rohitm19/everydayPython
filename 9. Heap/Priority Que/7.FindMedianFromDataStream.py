@@ -1,15 +1,16 @@
-#neetcode
+#vsCode
+
+import heapq
 
 class MedianFinder:
     def __init__(self):
-        """
-        initialize your data structure here.
-        """
-        # two heaps, large, small, minheap, maxheap
-        # heaps should be equal size
+        # Initialize your data structure here.
         self.small, self.large = [], []  # maxHeap, minHeap (python default)
 
     def addNum(self, num: int) -> None:
+        # Manually input a number to add to the data structure
+        num = 5  # Change to your desired number
+
         if self.large and num > self.large[0]:
             heapq.heappush(self.large, num)
         else:
@@ -28,3 +29,8 @@ class MedianFinder:
         elif len(self.large) > len(self.small):
             return self.large[0]
         return (-1 * self.small[0] + self.large[0]) / 2.0
+
+# Create an instance of the MedianFinder class
+median_finder = MedianFinder()
+
+# Add numbers to the data structure and find the median as needed
