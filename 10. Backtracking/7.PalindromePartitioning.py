@@ -1,4 +1,6 @@
-#neetcode
+#vsCode
+
+from typing import List
 
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
@@ -14,6 +16,9 @@ class Solution:
                     dfs(j + 1)
                     part.pop()
 
+        # Manually input your string here
+        s = "aab"
+
         dfs(0)
         return res
 
@@ -23,3 +28,12 @@ class Solution:
                 return False
             l, r = l + 1, r - 1
         return True
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the partition method to generate partitions based on your manual input
+result = solution.partition(s)
+
+# Print the generated partitions
+print(result)
