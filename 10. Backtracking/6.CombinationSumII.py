@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
@@ -22,5 +24,18 @@ class Solution:
                 cur.pop()
                 prev = candidates[i]
 
+        # Manually input your candidates and target here
+        candidates = [10, 1, 2, 7, 6, 5]
+        target = 8
+
         backtrack([], 0, target)
         return res
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the combinationSum2 method to generate combinations based on your manual input
+result = solution.combinationSum2(candidates, target)
+
+# Print the generated combinations
+print(result)
