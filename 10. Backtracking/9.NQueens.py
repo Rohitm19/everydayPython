@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
@@ -31,5 +33,20 @@ class Solution:
                 negDiag.remove(r - c)
                 board[r][c] = "."
 
+        # Manually input the value of 'n' here
+        n = 8  # Adjust as needed
+
         backtrack(0)
         return res
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the solveNQueens method to find solutions based on your manual input
+result = solution.solveNQueens(n)
+
+# Print the solutions
+for solution in result:
+    for row in solution:
+        print(row)
+    print()
