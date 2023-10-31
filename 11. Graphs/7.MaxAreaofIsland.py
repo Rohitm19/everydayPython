@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
@@ -18,8 +20,25 @@ class Solution:
             visit.add((r, c))
             return 1 + dfs(r + 1, c) + dfs(r - 1, c) + dfs(r, c + 1) + dfs(r, c - 1)
 
+        # Manually input the grid here
+        grid = [
+            [1, 1, 0, 0, 0],
+            [1, 1, 0, 0, 0],
+            [0, 0, 0, 1, 1],
+            [0, 0, 0, 1, 1]
+        ]  # Adjust as needed
+
         area = 0
         for r in range(ROWS):
             for c in range(COLS):
                 area = max(area, dfs(r, c))
         return area
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the maxAreaOfIsland method to find the maximum area based on your manual input
+result = solution.maxAreaOfIsland(grid)
+
+# Print the maximum area
+print("Maximum Area of Island:", result)
