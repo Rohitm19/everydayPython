@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
@@ -12,6 +14,14 @@ class Solution:
             capture(r - 1, c)
             capture(r, c + 1)
             capture(r, c - 1)
+
+        # Manually input the board matrix here
+        board = [
+            ["X", "X", "X", "X"],
+            ["X", "O", "O", "X"],
+            ["X", "X", "O", "X"],
+            ["X", "X", "X", "X"],
+        ]  # Adjust as needed
 
         # 1. (DFS) Capture unsurrounded regions (O -> T)
         for r in range(ROWS):
@@ -30,3 +40,13 @@ class Solution:
             for c in range(COLS):
                 if board[r][c] == "T":
                     board[r][c] = "O"
+
+        # Print the modified board
+        for row in board:
+            print(" ".join(row))
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the solve method to modify the board based on your manual input
+solution.solve(board)
