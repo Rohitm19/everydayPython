@@ -46,3 +46,4 @@ ladder_length = solution.ladderLength(beginWord, endWord, wordList)
 
 # Print the result
 print("The ladder length is:", ladder_length)
+
