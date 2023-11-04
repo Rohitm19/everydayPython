@@ -1,7 +1,9 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
-    def swimInWater(self, grid: List[List[int]]) -> int:
+    def swimInWater(self, grid: List[List[int]) -> int:
         N = len(grid)
         visit = set()
         minH = [[grid[0][0], 0, 0]]  # (time/max-height, r, c)
@@ -24,3 +26,19 @@ class Solution:
                     continue
                 visit.add((neiR, neiC))
                 heapq.heappush(minH, [max(t, grid[neiR][neiC]), neiR, neiC])
+
+# Manual Input
+grid = [
+    [0, 2, 4],
+    [2, 4, 5],
+    [7, 7, 7]
+]
+ 
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the swimInWater method with your input
+min_time = solution.swimInWater(grid)
+
+# Print the result
+print("Minimum Time:", min_time)
