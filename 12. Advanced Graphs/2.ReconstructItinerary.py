@@ -1,7 +1,9 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
-    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+    def findItinerary(self, tickets: List[List[str]) -> List[str]:
         adj = {src: [] for src, dst in tickets}
         res = []
 
@@ -28,3 +30,15 @@ class Solution:
             return []
 
         return res
+
+# Manual Input
+tickets = [["MUC","LHR"],["JFK","MUC"],["SFO","SJC"],["LHR","SFO"]]
+ 
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the findItinerary method with your input
+itinerary = solution.findItinerary(tickets)
+
+# Print the result
+print("Itinerary:", itinerary)
