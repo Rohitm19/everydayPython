@@ -1,7 +1,9 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
-    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+    def minCostConnectPoints(self, points: List[List[int]) -> int:
         N = len(points)
         adj = {i: [] for i in range(N)}  # i : list of [cost, node]
         for i in range(N):
@@ -26,3 +28,15 @@ class Solution:
                 if nei not in visit:
                     heapq.heappush(minH, [neiCost, nei])
         return res
+
+# Manual Input
+points = [[0,0],[2,2],[3,10],[5,2],[7,0]]
+ 
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the minCostConnectPoints method with your input
+min_cost = solution.minCostConnectPoints(points)
+
+# Print the result
+print("Minimum Cost:", min_cost)
