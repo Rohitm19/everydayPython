@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def findCheapestPrice(
@@ -17,3 +19,19 @@ class Solution:
                     tmpPrices[d] = prices[s] + p
             prices = tmpPrices
         return -1 if prices[dst] == float("inf") else prices[dst]
+
+# Manual Input
+n = 3
+flights = [[0, 1, 100], [1, 2, 100], [0, 2, 500]]
+src = 0
+dst = 2
+k = 1
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the findCheapestPrice method with your input
+cheapest_price = solution.findCheapestPrice(n, flights, src, dst, k)
+
+# Print the result
+print("Cheapest Price:", cheapest_price)
