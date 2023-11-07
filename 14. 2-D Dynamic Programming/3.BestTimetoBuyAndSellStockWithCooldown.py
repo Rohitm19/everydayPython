@@ -1,11 +1,9 @@
 #vsCode
 
+from typing import List
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        # State: Buying or Selling?
-        # If Buy -> i + 1
-        # If Sell -> i + 2
-
         dp = {}  # key=(i, buying) val=max_profit
 
         def dfs(i, buying):
@@ -24,3 +22,15 @@ class Solution:
             return dp[(i, buying)]
 
         return dfs(0, True)
+
+# Manual Input
+prices = [7, 1, 5, 3, 6, 4]  # Replace this with your input
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the maxProfit method with your input
+result = solution.maxProfit(prices)
+
+# Print the result
+print("The maximum profit is:", result)
