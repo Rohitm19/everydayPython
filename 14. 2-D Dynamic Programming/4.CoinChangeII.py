@@ -1,3 +1,7 @@
+#vsCode
+
+from typing import List
+
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
         # MEMOIZATION
@@ -47,3 +51,16 @@ class Solution:
                     nextDP[a] += nextDP[a - coins[i]]
             dp = nextDP
         return dp[amount]
+
+# Manual Input
+amount = 5  # Replace this with your input
+coins = [1, 2, 5]  # Replace this with your input
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the change method with your input
+result = solution.change(amount, coins)
+
+# Print the result
+print("The number of combinations to make", amount, "is:", result)
