@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
@@ -16,3 +18,16 @@ class Solution:
             return dp[(i, total)]
 
         return backtrack(0, 0)
+
+# Manual Input
+nums = [1, 1, 1, 1, 1]  # Replace this with your input
+target = 3  # Replace this with your input
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the findTargetSumWays method with your input
+result = solution.findTargetSumWays(nums, target)
+
+# Print the result
+print("The number of ways to reach the target is:", result)
