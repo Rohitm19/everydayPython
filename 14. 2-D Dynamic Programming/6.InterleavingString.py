@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
@@ -15,3 +15,17 @@ class Solution:
                 if j < len(s2) and s2[j] == s3[i + j] and dp[i][j + 1]:
                     dp[i][j] = True
         return dp[0][0]
+
+# Manual Input
+s1 = "aabcc"  # Replace this with your input
+s2 = "dbbca"  # Replace this with your input
+s3 = "aadbbcbcac"  # Replace this with your input
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the isInterleave method with your input
+result = solution.isInterleave(s1, s2, s3)
+
+# Print the result
+print("Is it possible to interleave the strings? ", result)
