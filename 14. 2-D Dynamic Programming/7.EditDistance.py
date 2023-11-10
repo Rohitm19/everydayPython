@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
@@ -16,3 +16,16 @@ class Solution:
                 else:
                     dp[i][j] = 1 + min(dp[i + 1][j], dp[i][j + 1], dp[i + 1][j + 1])
         return dp[0][0]
+
+# Manual Input
+word1 = "horse"  # Replace this with your input
+word2 = "ros"    # Replace this with your input
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the minDistance method with your input
+result = solution.minDistance(word1, word2)
+
+# Print the result
+print("Minimum Distance:", result)
