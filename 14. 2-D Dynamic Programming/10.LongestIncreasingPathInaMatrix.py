@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
@@ -23,3 +23,19 @@ class Solution:
             for c in range(COLS):
                 dfs(r, c, -1)
         return max(dp.values())
+
+# Manual Input
+matrix = [
+    [9, 9, 4],
+    [6, 6, 8],
+    [2, 1, 1]
+]  # Replace this with your input
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the longestIncreasingPath method with your input
+result = solution.longestIncreasingPath(matrix)
+
+# Print the result
+print("Longest Increasing Path:", result)
