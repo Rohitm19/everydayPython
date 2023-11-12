@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def maxCoins(self, nums: List[int]) -> int:
@@ -13,3 +13,15 @@ class Solution:
                     coins += cache.get((left, pivot), 0) + cache.get((pivot, right), 0)
                     cache[(left, right)] = max(coins, cache.get((left, right), 0))
         return cache.get((0, len(nums) - 1), 0)
+
+# Manual Input
+nums = [3, 1, 5, 8]  # Replace this with your input
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the maxCoins method with your input
+result = solution.maxCoins(nums)
+
+# Print the result
+print("Maximum Coins:", result)
