@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
@@ -22,3 +22,16 @@ class Solution:
                         return False
                     heapq.heappop(minH)
         return True
+
+# Manual Input
+hand = [1, 2, 3, 6, 2, 3, 4, 7, 8]
+groupSize = 3
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the isNStraightHand method with your input
+result = solution.isNStraightHand(hand, groupSize)
+
+# Print the result
+print("Is it possible to rearrange the hand:", result)
