@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def isHappy(self, n: int) -> bool:
@@ -17,3 +17,11 @@ class Solution:
             output += (n % 10) ** 2
             n = n // 10
         return output
+
+# Manual Input
+input_number = 19
+solution = Solution()
+
+# Using the method
+result = solution.isHappy(input_number)
+print("Result:", result)
