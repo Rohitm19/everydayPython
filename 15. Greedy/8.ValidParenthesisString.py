@@ -1,6 +1,8 @@
-# Dynamic Programming: O(n^2)
+#vsCode
+
 class Solution:
-    def checkValidString(self, s: str) -> bool:
+    # Dynamic Programming: O(n^2)
+    def checkValidStringDP(self, s: str) -> bool:
         dp = {(len(s), 0): True}  # key=(i, leftCount) -> isValid
 
         def dfs(i, left):
@@ -21,10 +23,8 @@ class Solution:
 
         return dfs(0, 0)
 
-
-# Greedy: O(n)
-class Solution:
-    def checkValidString(self, s: str) -> bool:
+    # Greedy: O(n)
+    def checkValidStringGreedy(self, s: str) -> bool:
         leftMin, leftMax = 0, 0
 
         for c in s:
@@ -39,3 +39,15 @@ class Solution:
             if leftMin < 0:  # required because -> s = ( * ) (
                 leftMin = 0
         return leftMin == 0
+
+# Manual Input
+input_string = "(*))"
+solution = Solution()
+
+# Using Dynamic Programming
+result_dp = solution.checkValidStringDP(input_string)
+print("Is Valid String (DP):", result_dp)
+
+# Using Greedy
+result_greedy = solution.checkValidStringGreedy(input_string)
+print("Is Valid String (Greedy):", result_greedy)
