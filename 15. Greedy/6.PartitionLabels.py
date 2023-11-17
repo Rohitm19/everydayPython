@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def partitionLabels(self, S: str) -> List[int]:
@@ -21,3 +21,11 @@ class Solution:
                 curLen = 0
             i += 1
         return res
+
+# Manual Input
+input_string = "abacab"
+solution = Solution()
+result = solution.partitionLabels(input_string)
+
+# Print the result
+print("Partition Labels:", result)
