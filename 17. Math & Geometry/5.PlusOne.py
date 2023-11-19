@@ -1,4 +1,6 @@
-#neetCode
+#vsCode
+
+from typing import List
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
@@ -18,3 +20,11 @@ class Solution:
                 one = 0
             i += 1
         return digits[::-1]
+
+# Manual Input
+input_digits = [1, 2, 3]
+solution = Solution()
+
+# Using the method
+result = solution.plusOne(input_digits)
+print("Result:", result)
