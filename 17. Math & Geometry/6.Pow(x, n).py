@@ -1,4 +1,4 @@
-#neetCode
+#vsCode
 
 class Solution:
     def myPow(self, x: float, n: int) -> float:
@@ -11,5 +11,15 @@ class Solution:
             res = helper(x * x, n // 2)
             return x * res if n % 2 else res
 
-        res = helper(x, abs(n))
-        return res if n >= 0 else 1 / res
+        # Manual Input
+        base = float(input("Enter the base (x): "))
+        exponent = int(input("Enter the exponent (n): "))
+
+        result = self.myPow(base, exponent)
+        print("Result:", result)
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Use the myPow method with manual input
+solution.myPow(x, n)
