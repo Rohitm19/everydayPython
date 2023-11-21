@@ -1,17 +1,19 @@
-#neetCode
+#vsCode
+
+import math
 
 class Solution:
     def reverse(self, x: int) -> int:
-        # Integer.MAX_VALUE = 2147483647 (end with 7)
-        # Integer.MIN_VALUE = -2147483648 (end with -8 )
+        # Manual Input for testing
+        x_input = int(input("Enter an integer: "))
 
-        MIN = -2147483648  # -2^31,
+        MIN = -2147483648  # -2^31
         MAX = 2147483647  #  2^31 - 1
 
         res = 0
-        while x:
-            digit = int(math.fmod(x, 10))  # (python dumb) -1 %  10 = 9
-            x = int(x / 10)  # (python dumb) -1 // 10 = -1
+        while x_input:
+            digit = int(math.fmod(x_input, 10))
+            x_input = int(x_input / 10)
 
             if res > MAX // 10 or (res == MAX // 10 and digit > MAX % 10):
                 return 0
@@ -20,3 +22,8 @@ class Solution:
             res = (res * 10) + digit
 
         return res
+
+# Example Usage
+solution = Solution()
+result = solution.reverse(0)
+print(f"Reversed Number: {result}")
