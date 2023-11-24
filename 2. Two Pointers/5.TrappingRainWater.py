@@ -1,3 +1,4 @@
+#vsCode
 class Solution:
     def trap(self, height: List[int]) -> int:
         if not height:
@@ -17,6 +18,7 @@ class Solution:
                 res += rightMax - height[r]
         return res
 
+#neetCode
 def main():
     solution = Solution()
     height = [int(x) for x in input("Enter the list of heights (comma-separated): ").split(',')]
