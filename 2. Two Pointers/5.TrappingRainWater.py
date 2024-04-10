@@ -17,14 +17,3 @@ class Solution:
                 rightMax = max(rightMax, height[r])
                 res += rightMax - height[r]
         return res
-
-#neetCode
-def main():
-    solution = Solution()
-    height = [int(x) for x in input("Enter the list of heights (comma-separated): ").split(',')]
-    result = solution.trap(height)
-    print("The total trapped water is:", result)
-
-if __name__ == "__main__":
-    main()
-
