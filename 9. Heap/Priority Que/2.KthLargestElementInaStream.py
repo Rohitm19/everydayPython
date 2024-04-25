@@ -28,3 +28,4 @@ class Solution(object):
         
         stones.append(0)
         return stones[0]
+    
