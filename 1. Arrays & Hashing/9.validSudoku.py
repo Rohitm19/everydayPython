@@ -4,7 +4,6 @@ class Solution:
         cols = collections.defaultdict(set)
         rows = collections.defaultdict(set)
         squares = collections.defaultdict(set)  # key = (r /3, c /3)
-
         for r in range(9):
             for c in range(9):
                 if board[r][c] == ".":
