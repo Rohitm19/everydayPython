@@ -1,8 +1,7 @@
 #neetCode
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        count = {}
-        
+        count = {}    
         l = 0
         maxf = 0
         for r in range(len(s)):
