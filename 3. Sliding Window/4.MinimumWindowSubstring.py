@@ -3,7 +3,6 @@ class Solution:
     def minWindow(self, s: str, t: str) -> str:
         if t == "":
             return ""
-
         countT, window = {}, {}
         for c in t:
             countT[c] = 1 + countT.get(c, 0)
