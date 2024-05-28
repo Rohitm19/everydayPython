@@ -3,7 +3,6 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         stack = []
         res = []
-
         def backtrack(openN, closedN):
             if openN == closedN == n:
                 res.append("".join(stack))
