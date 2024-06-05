@@ -4,7 +4,6 @@ class Node:
         self.key, self.val = key, val
         self.prev = self.next = None
 
-
 class LRUCache:
     def __init__(self, capacity: int):
         self.cap = capacity
