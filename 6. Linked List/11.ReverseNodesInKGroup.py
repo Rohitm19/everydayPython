@@ -3,7 +3,6 @@ class Solution:
     def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
         dummy = ListNode(0, head)
         groupPrev = dummy
-
         while True:
             kth = self.getKth(groupPrev, k)
             if not kth:
