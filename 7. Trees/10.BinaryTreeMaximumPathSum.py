@@ -6,7 +6,6 @@ class Solution:
         def dfs(root):
             if not root:
                 return 0
-
             leftMax = dfs(root.left)
             rightMax = dfs(root.right)
             leftMax = max(leftMax, 0)
