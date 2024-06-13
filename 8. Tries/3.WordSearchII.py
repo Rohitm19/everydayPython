@@ -23,7 +23,6 @@ class TrieNode:
                 cur = cur.children[c]
                 cur.refs -= 1
 
-
 class Solution:
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
         root = TrieNode()
