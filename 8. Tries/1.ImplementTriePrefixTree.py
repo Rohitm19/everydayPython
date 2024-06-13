@@ -4,7 +4,6 @@ class TrieNode:
         self.children = [None] * 26
         self.end = False
 
-
 class Trie:
     def __init__(self):
         """
@@ -46,4 +45,4 @@ class Trie:
             if curr.children[i] == None:
                 return False
             curr = curr.children[i]
-        return True
+        return True 
